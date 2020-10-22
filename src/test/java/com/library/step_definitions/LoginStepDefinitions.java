@@ -16,9 +16,6 @@ public class LoginStepDefinitions {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-
-
-
     @When("user logs in as a {string}")
     public void user_logs_in_as_a(String string) {
         loginPage.login(string);
@@ -27,12 +24,11 @@ public class LoginStepDefinitions {
 
     @Then("user should see dashboard page")
     public void user_should_see_dashboard_page() {
-       String expected = "Library";
-       String actual = loginPage.gethomePageTitleURL();
+       String expected = "Login - Library";
+       String actual = loginPage.getTitle();
+        System.out.println(loginPage.getTitle());
 
-
-       Assert.assertTrue(loginPage.getPageSubTitleText().contains("Dashboard"));
-       //Assert.assertEquals("Title is not correct, verification FAILED!", expected, actual);
+       Assert.assertEquals("Title is not correct, verification FAILED!", expected, actual);
         System.out.println("I see the the Librarian page dashboard");
         Driver.closeDriver();
 
