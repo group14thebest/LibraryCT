@@ -44,10 +44,10 @@ public class SearchBookStepDefinitions {
         Assert.assertTrue(true);
     }
 
-    @And("user enters book year")
-    public void user_enters_book_year() {
+    @And("user enters book author")
+    public void user_enters_book_author() {
         BrowserUtil.wait(2);
-        booksPage.search_book_by("1999");
+        booksPage.search_book_by("Ahmet");
     }
 
 

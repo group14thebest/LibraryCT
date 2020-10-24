@@ -11,7 +11,7 @@ Feature: As a user I should be able to search books under "Books" tab.
         And user enters book name
         Then selection of the books related to that name appears
 
-      @searchByYear
-      Scenario: search by book's year
-        And user enters book year
+      @searchByAuthor
+      Scenario: search by book's author
+        And user enters book author
 
