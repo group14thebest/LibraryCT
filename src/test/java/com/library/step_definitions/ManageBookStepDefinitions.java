@@ -15,6 +15,6 @@ public class ManageBookStepDefinitions {
     @When("user clicks {string} button")
     public void user_clicks_button(String string) {
         BrowserUtil.wait(2);
-        booksPage.click_addBook();
+        booksPage.click_addBook(); //comment
     }
 }
