@@ -21,7 +21,6 @@ public class LoginStepDefinitions {
         loginPage.login(string);
     }
 
-
     @Then("user should see dashboard page")
     public void user_should_see_dashboard_page() {
        String expected = "Login - Library";

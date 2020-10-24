@@ -7,6 +7,9 @@ public class BooksPage extends BasePage{
     @FindBy(xpath = "//span[.='Books']")
     private WebElement booksTab;
 
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement searchInputBox;
+
     @FindBy(xpath = "//a[@class='btn btn-lg btn-outline btn-primary btn-sm add_book_btn']")
     private WebElement addBookButton;
 
@@ -15,6 +18,12 @@ public class BooksPage extends BasePage{
         booksTab.click();
     }
 
+    public void click_searchInputBox(){
+        searchInputBox.click();
+    }
+    public void search_book_by(String string){
+        searchInputBox.sendKeys(string);
+    }
     public void click_addBook(){
         addBookButton.click();
     }
