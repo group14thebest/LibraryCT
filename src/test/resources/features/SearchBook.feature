@@ -7,7 +7,6 @@ Feature: As a user I should be able to search books under "Books" tab.
 
       @searchByName
       Scenario: search by book's name
-        When user clicks on "search" input box
         And user enters book name
         Then selection of the books related to that name appears
 

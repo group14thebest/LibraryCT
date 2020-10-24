@@ -28,13 +28,7 @@ public class SearchBookStepDefinitions {
         booksPage.click_books_tab();
     }
 
-    @When("user clicks on {string} input box")
-    public void user_clicks_on_input_box(String string) {
-        BrowserUtil.wait(2);
-       booksPage.click_searchInputBox();
-    }
-
-    @When("user enters book name")
+    @And("user enters book name")
     public void user_enters_book_name() {
         booksPage.search_book_by("test");
     }
@@ -46,7 +40,6 @@ public class SearchBookStepDefinitions {
 
     @And("user enters book author")
     public void user_enters_book_author() {
-        BrowserUtil.wait(2);
         booksPage.search_book_by("Ahmet");
     }
 
