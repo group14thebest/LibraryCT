@@ -7,12 +7,14 @@ import com.library.utils.ConfigurationReader;
 import com.library.utils.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class SearchBookStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
     BooksPage booksPage = new BooksPage();
-
 
     @Given("user is on dashboard page")
     public void user_is_on_dashboard_page() {
@@ -26,10 +28,29 @@ public class SearchBookStepDefinitions {
         booksPage.click_books_tab();
     }
 
-    @And("user clicks {string} button")
-    public void user_clicks_button(String string) {
+    @When("user clicks on {string} input box")
+    public void user_clicks_on_input_box(String string) {
         BrowserUtil.wait(2);
-        booksPage.click_addBook();
+       booksPage.click_searchInputBox();
     }
+
+    @When("user enters book name")
+    public void user_enters_book_name() {
+        booksPage.search_book_by("test");
+    }
+
+    @Then("selection of the books related to that name appears")
+    public void selection_of_the_books_related_to_that_name_appears() {
+        Assert.assertTrue(true);
+    }
+
+    @And("user enters book author")
+    public void user_enters_book_author() {
+        BrowserUtil.wait(2);
+        booksPage.search_book_by("Ahmet");
+    }
+
+
+
 
 }

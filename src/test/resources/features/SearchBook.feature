@@ -5,6 +5,15 @@ Feature: As a user I should be able to search books under "Books" tab.
     Given user is on dashboard page
     And user clicks "Books" tab
 
-    @addBook
-    Scenario: add book
-    When user clicks "Add Book" button
+      @searchByName
+      Scenario: search by book's name
+        When user clicks on "search" input box
+        And user enters book name
+        Then selection of the books related to that name appears
+
+      @searchByAuthor
+      Scenario: search by book's author
+        And user enters book author
+
+
+
