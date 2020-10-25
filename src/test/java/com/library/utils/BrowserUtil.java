@@ -35,6 +35,12 @@ public class BrowserUtil {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
+    public static void enterText(WebElement element, String text){
+       wait.until(ExpectedConditions.visibilityOf(element));
+       element.clear();
+       element.sendKeys(text);
+    }
+
 
 
 
