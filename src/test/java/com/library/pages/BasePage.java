@@ -1,11 +1,14 @@
 package com.library.pages;
 
 import com.library.utils.Driver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class  BasePage {
+
+    protected WebDriver driver = Driver.getDriver();
 
     @FindBy (xpath = "//span[@class='title']")
     protected WebElement pageSubTitle;
@@ -17,6 +20,10 @@ public abstract class  BasePage {
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
+    }
+
+    public String getTitle(){
+        return driver.getTitle();
     }
 
 
