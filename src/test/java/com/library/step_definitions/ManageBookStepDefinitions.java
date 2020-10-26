@@ -17,12 +17,12 @@ public class ManageBookStepDefinitions {
     BooksPage booksPage = new BooksPage();
 
     @When("user clicks {string} button")
-    public void user_clicks_button(String string) {
+    public void user_clicks_button(String button) {
         BrowserUtil.wait(2);
         booksPage.click_addBook();
     }
 
-    @When("user enters book information")
+    @And("user enters book information")
     public void user_enters_book_information(Map<String,String> map) {
 
         String bookName = map.get("Book Name");
@@ -36,14 +36,13 @@ public class ManageBookStepDefinitions {
         booksPage.addYear(year);
         booksPage.addAuthor(author);
         booksPage.addDescription(description);
-
     }
 
-
-    @When("user clicks on Save changes button")
+    @And("user clicks on Save changes button")
     public void user_clicks_on_save_changes_button() {
         booksPage.clickSaveChangesBtn();
     }
+
     @Then("confirmation message appears")
     public void appears() {
         Assert.assertTrue(booksPage.confirmationMessageCheck());
