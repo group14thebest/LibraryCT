@@ -14,6 +14,14 @@ Feature: As a user I should be able to search books under "Books" tab.
       Scenario: search by book's author
         And user enters book author
 
+      @search_by_book_categories
+      Scenario: Search books by Book Categories
+        When user clicks and selects the Book Categories dropdown
+        Then user should be able to see all Romance books
+
+
+
+
 
 
 

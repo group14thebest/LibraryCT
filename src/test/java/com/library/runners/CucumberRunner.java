@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         glue="com/library/step_definitions",
         dryRun=false,
-        tags="@addBook"
+        tags="@search_by_book_categories"
 )
 
 public class CucumberRunner {

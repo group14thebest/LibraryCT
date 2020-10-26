@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class SearchBookStepDefinitions {
 
@@ -43,6 +44,21 @@ public class SearchBookStepDefinitions {
         booksPage.search_book_by("Ahmet");
     }
 
+    @When("user clicks and selects the Book Categories dropdown")
+    public void user_clicks_and_selects_the_book_categories_dropdown() {
+        BrowserUtil.wait(3);
+        booksPage.click_books_tab();
+        booksPage.clickAndSelectBookCategories();
+        BrowserUtil.wait(2);
+    }
+    @Then("user should be able to see all Romance books")
+    public void user_should_be_able_to_see_all_romance_books() {
+        String expectedCategory= "Romance";
+       String actualCategory = Driver.getDriver().findElement(By.xpath("(//tbody/tr/td[5])[1]")).getText();
+       Assert.assertTrue("Expected and Actual Category Verification FAILED!",expectedCategory.equalsIgnoreCase(actualCategory));
+
+
+    }
 
 
 
