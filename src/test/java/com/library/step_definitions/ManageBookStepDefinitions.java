@@ -31,11 +31,11 @@ public class ManageBookStepDefinitions {
         String author = map.get("Author");
         String description = map.get("Description");
 
-        booksPage.addBookName(bookName);
-        booksPage.addISBN(ISBN);
-        booksPage.addYear(year);
-        booksPage.addAuthor(author);
-        booksPage.addDescription(description);
+        booksPage.add_edit_bookName(bookName);
+        booksPage.add_edit_ISBN(ISBN);
+        booksPage.add_edit_year(year);
+        booksPage.add_edit_author(author);
+        booksPage.add_description(description);
     }
 
     @And("user clicks on Save changes button")

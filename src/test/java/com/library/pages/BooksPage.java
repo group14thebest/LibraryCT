@@ -68,19 +68,19 @@ public class BooksPage extends BasePage{
     public void click_addBook(){
         addBookButton.click();
     }
-    public void addBookName(String bookName){
+    public void add_edit_bookName(String bookName){
     BrowserUtil.enterText(bookNameInputBox,bookName);
     }
-    public void addISBN(String ISBN){
+    public void add_edit_ISBN(String ISBN){
         BrowserUtil.enterText(ISBNInputBox,ISBN);
     }
-    public void addYear(String year){
+    public void add_edit_year(String year){
         BrowserUtil.enterText(yearInputBox,year);
     }
-    public void addAuthor(String author){
+    public void add_edit_author(String author){
         BrowserUtil.enterText(authorInputBox,author);
     }
-    public void addDescription(String description){
+    public void add_description(String description){
         BrowserUtil.enterText(descriptionInputBox,description);
     }
     public void clickSaveChangesBtn(){
@@ -95,32 +95,4 @@ public class BooksPage extends BasePage{
         BrowserUtil.wait(3);
         bookCategory.selectByVisibleText("Romance");
     }
-    // Edit Book Methods
-    public void click_editBookBtn(){
-        editBookBtn.click();
-    }
-    public void editBookName(String bookName){
-        BrowserUtil.enterText(bookNameInputBox,bookName);
-    }
-    public void editISBN(String ISBN){
-        BrowserUtil.enterText(ISBNInputBox,ISBN);
-    }
-    public void editYear(String year){
-        BrowserUtil.enterText(yearInputBox,year);
-    }
-    public void editAuthor(String author){
-        BrowserUtil.enterText(authorInputBox,author);
-    }
-    public void editDescription(String description){
-        BrowserUtil.enterText(descriptionInputBox,description);
-    }
-    public void clickEditChangesBtn(){clickOnElement(saveChangesBtn);}
-
-
-
-
-
-
-
-
 }
