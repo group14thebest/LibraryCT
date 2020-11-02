@@ -95,4 +95,6 @@ public class BooksPage extends BasePage{
         BrowserUtil.wait(3);
         bookCategory.selectByVisibleText("Romance");
     }
+
+    // Test
 }
