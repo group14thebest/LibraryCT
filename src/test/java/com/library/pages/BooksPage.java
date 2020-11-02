@@ -52,6 +52,10 @@ public class BooksPage extends BasePage{
     @FindBy(xpath = "//select[@id='book_categories']/option[@value='16']")
     private WebElement romance;
 
+    @FindBy(xpath = "//table[@id='tbl_books']//a[1]")
+    private WebElement editBookBtn;
+
+
 
     public void click_books_tab(){
         booksTab.click();
@@ -91,6 +95,28 @@ public class BooksPage extends BasePage{
         BrowserUtil.wait(3);
         bookCategory.selectByVisibleText("Romance");
     }
+    // Edit Book Methods
+    public void click_editBookBtn(){
+        editBookBtn.click();
+    }
+    public void editBookName(String bookName){
+        BrowserUtil.enterText(bookNameInputBox,bookName);
+    }
+    public void editISBN(String ISBN){
+        BrowserUtil.enterText(ISBNInputBox,ISBN);
+    }
+    public void editYear(String year){
+        BrowserUtil.enterText(yearInputBox,year);
+    }
+    public void editAuthor(String author){
+        BrowserUtil.enterText(authorInputBox,author);
+    }
+    public void editDescription(String description){
+        BrowserUtil.enterText(descriptionInputBox,description);
+    }
+    public void clickEditChangesBtn(){clickOnElement(saveChangesBtn);}
+
+
 
 
 

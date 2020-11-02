@@ -13,6 +13,7 @@ Feature: As a user I should be able to search books under "Books" tab.
       @searchByAuthor
       Scenario: search by book's author
         And user enters book author
+        Then selection of the books related to that author appears
 
       @search_by_book_categories
       Scenario: Search books by Book Categories

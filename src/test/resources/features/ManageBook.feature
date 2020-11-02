@@ -17,4 +17,17 @@ When user clicks "Add Book" button
   And user clicks on Save changes button
   Then confirmation message appears
 
+  @editBook
+  Scenario: edit book
+    When user clicks "Edit Book" button
+    And user enters book information
+      |Book Name  |Edit Book   |
+      |ISBN       |1133557799  |
+      |Year       |2010        |
+      |Author     |Somebody    |
+      |Description|Edit Test   |
+    And user clicks on Save changes button
+    Then confirmation message appears
+
+
 

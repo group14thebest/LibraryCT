@@ -36,12 +36,17 @@ public class SearchBookStepDefinitions {
 
     @Then("selection of the books related to that name appears")
     public void selection_of_the_books_related_to_that_name_appears() {
-        Assert.assertTrue(true);
+        // Andrii & Mark
     }
 
     @And("user enters book author")
     public void user_enters_book_author() {
         booksPage.search_book_by("Ahmet");
+    }
+
+    @Then("selection of the books related to that author appears")
+    public void selection_of_the_books_related_to_that_author_appears() {
+        // Mehary & Ashenafi
     }
 
     @When("user clicks and selects the Book Categories dropdown")
@@ -56,10 +61,6 @@ public class SearchBookStepDefinitions {
         String expectedCategory= "Romance";
        String actualCategory = Driver.getDriver().findElement(By.xpath("(//tbody/tr/td[5])[1]")).getText();
        Assert.assertTrue("Expected and Actual Category Verification FAILED!",expectedCategory.equalsIgnoreCase(actualCategory));
-
-
     }
-
-
 
 }
