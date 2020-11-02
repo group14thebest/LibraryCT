@@ -30,6 +30,7 @@ public abstract class  BasePage {
     public String getPageSubTitleText(){
         return pageSubTitle.getText().trim();
     }
+    // this is the changes i want to see
 
     public String gethomePageTitleURL(){
         return homePageTitleURL.getText().trim();
