@@ -52,7 +52,7 @@ public class BooksPage extends BasePage{
     @FindBy(xpath = "//select[@id='book_categories']/option[@value='16']")
     private WebElement romance;
 
-    @FindBy(xpath = "//table[@id='tbl_books']//a[1]")
+    @FindBy (xpath = "//a[@class='btn btn-primary btn-sm']")
     private WebElement editBookBtn;
 
 
@@ -94,5 +94,8 @@ public class BooksPage extends BasePage{
         Select bookCategory = new Select(bookCategoryDropDown);
         BrowserUtil.wait(3);
         bookCategory.selectByVisibleText("Romance");
+    }
+    public void clickEditBookBtn(){
+        clickOnElement(editBookBtn);
     }
 }

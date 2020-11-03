@@ -18,8 +18,11 @@ public class ManageBookStepDefinitions {
 
     @When("user clicks {string} button")
     public void user_clicks_button(String button) {
-        BrowserUtil.wait(2);
-        booksPage.click_addBook();
+        if(button.equals("Add Books")){
+            booksPage.click_addBook();
+        }else if(button.equals("Edit Book")){
+            booksPage.clickEditBookBtn();
+        }
     }
 
     @And("user enters book information")
@@ -46,6 +49,20 @@ public class ManageBookStepDefinitions {
     @Then("confirmation message appears")
     public void appears() {
         Assert.assertTrue(booksPage.confirmationMessageCheck());
+    }
+
+    @And("user edits book information")
+    public void userEditsBookInformation(Map<String,String> map) {
+        String bookName = map.get("Book Name");
+        String ISBN = map.get("ISBN");
+        String year = map.get("Year");
+        String author = map.get("Author");
+        String description = map.get("Description");
+        booksPage.add_edit_bookName(bookName);
+        booksPage.add_edit_ISBN(ISBN);
+        booksPage.add_edit_year(year);
+        booksPage.add_edit_author(author);
+        booksPage.add_description(description);
     }
 
 
