@@ -18,7 +18,7 @@ public class ManageBookStepDefinitions {
 
     @When("user clicks {string} button")
     public void user_clicks_button(String button) {
-        if(button.equals("Add Books")){
+        if(button.equals("Add Book")){
             booksPage.click_addBook();
         }else if(button.equals("Edit Book")){
             booksPage.clickEditBookBtn();

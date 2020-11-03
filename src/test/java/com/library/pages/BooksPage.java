@@ -1,9 +1,6 @@
 package com.library.pages;
 import com.library.utils.BrowserUtil;
-import com.library.utils.Driver;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import com.library.utils.BrowserUtil.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -66,7 +63,7 @@ public class BooksPage extends BasePage{
         searchInputBox.sendKeys(string);
     }
     public void click_addBook(){
-        addBookButton.click();
+       clickOnElement(addBookButton);
     }
     public void add_edit_bookName(String bookName){
     BrowserUtil.enterText(bookNameInputBox,bookName);
